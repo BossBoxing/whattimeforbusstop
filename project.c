@@ -20,7 +20,8 @@ int BP[6][2]={
   {1,1}, // Bus Stop 6  
 };
 
-int RED[n_round]={ // RED BUS TIME
+int RED[6][n_round]={ // RED BUS TIME
+    { // RED BUS STOP 1
     1000, // -> 10:00 O'Clock 
     1100,
     1200,
@@ -30,10 +31,78 @@ int RED[n_round]={ // RED BUS TIME
     1600,
     1700,
     1800,
-    1900
+    1900,
+        
+    },
+    { // RED BUS STOP 2
+    1000, // -> 10:00 O'Clock 
+    1100,
+    1200,
+    1300,
+    1400,
+    1500,
+    1600,
+    1700,
+    1800,
+    1900,
+        
+    },
+    { // RED BUS STOP 3
+    1000, // -> 10:00 O'Clock 
+    1100,
+    1200,
+    1300,
+    1400,
+    1500,
+    1600,
+    1700,
+    1800,
+    1900,
+        
+    },
+    { // RED BUS STOP 4
+    1000, // -> 10:00 O'Clock 
+    1100,
+    1200,
+    1300,
+    1400,
+    1500,
+    1600,
+    1700,
+    1800,
+    1900,
+        
+    },
+    { // RED BUS STOP 5
+    1000, // -> 10:00 O'Clock 
+    1100,
+    1200,
+    1300,
+    1400,
+    1500,
+    1600,
+    1700,
+    1800,
+    1900,
+        
+    },
+    { // RED BUS STOP 6
+    1000, // -> 10:00 O'Clock 
+    1100,
+    1200,
+    1300,
+    1400,
+    1500,
+    1600,
+    1700,
+    1800,
+    1900,
+        
+    },
 };
 
-int BLUE[n_round]={ // BLUE BUS TIME
+int BLUE[6][n_round]={ // BLUE BUS TIME
+    { // BLUE BUS STOP 1
     1030, // -> 10:30 O'Clock 
     1130,
     1330,
@@ -43,7 +112,68 @@ int BLUE[n_round]={ // BLUE BUS TIME
     1630,
     1730,
     1830,
-    1930
+    1930,
+    },
+    { // BLUE BUS STOP 2
+    1030, // -> 10:30 O'Clock 
+    1130,
+    1330,
+    1330,
+    1430,
+    1530,
+    1630,
+    1730,
+    1830,
+    1930,
+    },
+    { // BLUE BUS STOP 3
+    1030, // -> 10:30 O'Clock 
+    1130,
+    1330,
+    1330,
+    1430,
+    1530,
+    1630,
+    1730,
+    1830,
+    1930,
+    },
+    { // BLUE BUS STOP 4
+    1030, // -> 10:30 O'Clock 
+    1130,
+    1330,
+    1330,
+    1430,
+    1530,
+    1630,
+    1730,
+    1830,
+    1930,
+    },
+    { // BLUE BUS STOP 5
+    1030, // -> 10:30 O'Clock 
+    1130,
+    1330,
+    1330,
+    1430,
+    1530,
+    1630,
+    1730,
+    1830,
+    2130,
+    },
+    { // BLUE BUS STOP 6
+    1030, // -> 10:30 O'Clock 
+    1130,
+    1330,
+    1330,
+    1430,
+    1530,
+    1630,
+    1730,
+    1830,
+    1930,
+    },
 };
 
 void cal_time(int redbus,int bluebus){
@@ -51,17 +181,17 @@ void cal_time(int redbus,int bluebus){
         printf("\nTime \n");
         printf("=== Next Red Bus === \n");
         for(int i=0; i<n_round; i++){
-            if(RED[i] >= Time){
-                printf("%d O'Clock\n",RED[i]);
-            }
+             if(RED[Location-1][i] >= Time){
+                 printf("%d O'Clock\n",RED[Location-1][i]);
+             }
         }
     }
     if(bluebus==1){
         printf("\nTime \n");
         printf("=== Next Blue Bus === \n");
         for(int i=0; i<n_round; i++){
-            if(BLUE[i] >= Time){
-                printf("%d O'Clock\n",BLUE[i]);
+            if(BLUE[Location-1][i] >= Time){
+                printf("%d O'Clock\n",BLUE[Location-1][i]);
             }
         }
     }
